@@ -28,22 +28,26 @@ Operators and teams can:
 
 ## 🎨 2. App Screenshots
 
-*(Note: Replace the placeholder image paths with actual screenshots in the `assets/screenshots/` folder)*
+### 🏠 Landing Page — Hero
+![Landing Page Hero](assets/screenshots/landing_hero.png)
 
-### Landing Page & Hero
-![Landing Page](assets/screenshots/landing.png)
+### ✨ Landing Page — Features
+![Landing Features](assets/screenshots/landing_features.png)
 
-### Lead Capture Form
-![Lead Form](assets/screenshots/lead_form.png)
+### 📬 Landing Page — Lead Capture Form
+![Lead Capture Form](assets/screenshots/landing_form.png)
 
-### Admin Dashboard Analytics
-![Dashboard](assets/screenshots/dashboard.png)
-
-### Leads Management Table
-![Leads Table](assets/screenshots/leads_table.png)
-
-### Authentication Flow
+### 🔐 Admin Login
 ![Login Page](assets/screenshots/login.png)
+
+### 📊 Admin Dashboard
+![Admin Dashboard](assets/screenshots/dashboard.png)
+
+### 👥 Leads Management Table
+![Leads Table](assets/screenshots/leads.png)
+
+### 📈 Analytics & Charts
+![Analytics Page](assets/screenshots/analytics.png)
 
 ---
 
