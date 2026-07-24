@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design System Base ─── */
+:root {
+  --bg: #050505;
+  --surface: #090909;
+  --card: #101010;
+  --elevated: #151515;
+  --border: #232323;
+  --primary: #F8F8F8;
+  --secondary: #A1A1AA;
+  --muted: #71717A;
+  --blue: #3B82F6;
+  --purple: #7C3AED;
+  --green: #22C55E;
+  --orange: #F59E0B;
+  --red: #EF4444;
+}
+
+/* ─── Global Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #050505;
+  color: #F8F8F8;
+  font-family: 'General Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+  color: #F8F8F8;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #090909;
+}
+::-webkit-scrollbar-thumb {
+  background: #232323;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+/* ─── Typography ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #F8F8F8;
+}
+
+/* ─── Noise Overlay ─── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ─── Grid Background ─── */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ─── Radial Glow ─── */
+.radial-glow {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59,130,246,0.07) 0%, transparent 60%);
+}
+
+/* ─── Card Styles ─── */
+.card-base {
+  @apply bg-card border border-border rounded-card;
+}
+.card-elevated {
+  @apply bg-elevated border border-border rounded-card;
+}
+
+/* ─── Scrolling Marquee ─── */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── Focus Rings ─── */
+:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Buttons Reset ─── */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ─── Input Base ─── */
+input, textarea, select {
+  font-family: 'General Sans', sans-serif;
+}
+
+/* ─── Gradient Text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, #F8F8F8 0%, #A1A1AA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #3B82F6 0%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Status Badges ─── */
+.badge-new {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full;
+  background: rgba(59, 130, 246, 0.12);
+  color: #3B82F6;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.badge-contacted {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full;
+  background: rgba(245, 158, 11, 0.12);
+  color: #F59E0B;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.badge-closed {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full;
+  background: rgba(34, 197, 94, 0.12);
+  color: #22C55E;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+/* ─── Sidebar ─── */
+.sidebar-link {
+  @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200;
+  color: #71717A;
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #A1A1AA;
+}
+
+.sidebar-link.active {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* ─── Table ─── */
+.data-table th {
+  @apply px-4 py-3 text-left text-xs font-medium tracking-wider;
+  color: #71717A;
+  border-bottom: 1px solid #232323;
+}
+
+.data-table td {
+  @apply px-4 py-4 text-sm;
+  color: #A1A1AA;
+  border-bottom: 1px solid rgba(35,35,35,0.6);
+}
+
+.data-table tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+/* ─── Number Font ─── */
+.font-num {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ─── Glassmorphism (subtle version) ─── */
+.glass-subtle {
+  background: rgba(9, 9, 9, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(35, 35, 35, 0.8);
+}
+
+/* ─── Stat Card Glow ─── */
+.stat-glow-blue { box-shadow: 0 0 40px rgba(59,130,246,0.06); }
+.stat-glow-purple { box-shadow: 0 0 40px rgba(124,58,237,0.06); }
+.stat-glow-green { box-shadow: 0 0 40px rgba(34,197,94,0.06); }
+.stat-glow-orange { box-shadow: 0 0 40px rgba(245,158,11,0.06); }
+
+/* ─── Chart Tooltip ─── */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: #151515 !important;
+  border: 1px solid #232323 !important;
+  border-radius: 12px !important;
+  color: #F8F8F8 !important;
+  font-family: 'General Sans', sans-serif !important;
+}
+
+/* ─── Accordion ─── */
+.accordion-trigger {
+  @apply flex w-full justify-between items-center py-4 text-left text-sm font-medium transition-colors;
+  color: #F8F8F8;
+  border-bottom: 1px solid #232323;
+}
+.accordion-trigger:hover { color: #A1A1AA; }
+
+/* ─── Page Transitions ─── */
+.page-enter {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
