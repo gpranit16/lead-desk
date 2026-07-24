@@ -11,7 +11,10 @@ const app = express();
 
 // Security Middlewares
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*',
+  credentials: true,
+}));
 
 // Logging Middleware
 if (process.env.NODE_ENV !== 'test') {
