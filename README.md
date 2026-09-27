@@ -106,7 +106,7 @@ graph TD
 | **Node.js** | Server-side JavaScript runtime |
 | **Express.js** | Fast, minimalist web framework for APIs |
 | **Mongoose** | Elegant MongoDB object modeling for Node.js |
-| **JWT & bcryptjs** | Secure token-based authorization and encryption |
+| **JWT & bcryptjs** | Token-based authorization and secure password hashing |
 | **Express Validator** | Middleware for robust request validation |
 
 ### Database & Deployment
